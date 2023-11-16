@@ -679,9 +679,233 @@ section .container {
 /*--------------------------------------------------------------
 # Galery
 --------------------------------------------------------------*/
-.galery .img{
-  size: 10px;
+.galery .galery-item {
+  margin-bottom: 30px;
 }
+
+.galery #galery-flters {
+  padding: 0;
+  margin: 0 auto 15px auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 50px;
+  padding: 2px 15px;
+}
+
+.galery #galery-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 3px 10px 3px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.galery #galery-flters li:hover,
+.galery #galery-flters li.filter-active {
+  background: #71C9CE;
+}
+
+.galery #galery-flters li:last-child {
+  margin-right: 0;
+}
+
+.galery .galery-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.galery .galery-wrap::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.galery .galery-wrap .galery-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galery .galery-wrap .galery-info::before {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.galery .galery-wrap .galery-info::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.galery .galery-wrap .galery-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.galery .galery-wrap .galery-info p {
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.galery .galery-wrap .galery-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.galery .galery-wrap .galery-links a {
+  color: #fff;
+  margin: 0 2px;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.galery .galery-wrap .galery-links a:hover {
+  color: #71C9CE;
+}
+
+.galery .galery-wrap:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+}
+
+.galery .galery-wrap:hover .galery-info {
+  opacity: 1;
+}
+
+.galery .galery-wrap:hover .galery-info::before {
+  top: 15px;
+  left: 15px;
+}
+
+.galery .galery-wrap:hover .galery-info::after {
+  bottom: 15px;
+  right: 15px;
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+.galery-details {
+  padding-top: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.galery-details .container {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.galery-details .galery-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.galery-details .galery-info {
+  padding-top: 45px;
+}
+
+.galery-details .galery-info h3 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.galery-details .galery-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.galery-details .galery-info ul li+li {
+  margin-top: 10px;
+}
+
+.galery-details .galery-info p {
+  font-size: 15px;
+  padding: 15px 0 0 0;
+}
+
+@media (max-width: 992px) {
+  .galery-details .galery-info {
+    padding-top: 20px;
+  }
+}
+
+.galery-details .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.galery-details .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.galery-details .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #71C9CE;
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio
